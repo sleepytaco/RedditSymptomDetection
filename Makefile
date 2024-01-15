@@ -7,8 +7,5 @@ install:
 activate:
 	source venv/bin/activate
 
-run-roberta:
-	cd backend/model; python roberta_clf.py
-
 run-flask:
 	cd backend; python app.py;

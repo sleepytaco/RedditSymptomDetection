@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     # query params
     text = request.args.get("text", "Hello world!")
-    sym_probs = roberta_clf.run_roberta_classifiers(text, roberta_clf.roberta_sym_classifiers)
+    sym_probs = roberta_clf.run_roberta_classifiers(text)
     # handle GET
     return {"text": text, **sym_probs}
 

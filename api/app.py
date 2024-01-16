@@ -1,7 +1,9 @@
 from flask import Flask, request
 from model import roberta_clf
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) # this allows cross-origin requests from any origin
 
 @app.route("/", methods=["GET"])
 def home():

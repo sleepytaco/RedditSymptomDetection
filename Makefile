@@ -20,7 +20,7 @@ activate:
 
 .PHONY: run-api
 run-api:
-	cd backend; python app.py;
+	cd api; python app.py;
 
 .PHONY: run-client
 run-client:

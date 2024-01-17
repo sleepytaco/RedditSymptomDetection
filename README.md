@@ -1,7 +1,7 @@
 # Detecting Depression Symptoms on Reddit 
 
 
-For my Computational Linguistics final project at Brown University, I trained random forest classifiers to predict
+For my NLP final project, I trained random forest classifiers to predict
 symptoms of depression from real Reddit text data with an average accuracy of 80%, trying two different methods to create
 linguistic features: fitting LDA model and generating embeddings with RoBERTa language model. I implemented some of the methods mentioned in the [Detecting Depression Symptoms on Reddit](https://dl.acm.org/doi/abs/10.1145/3578503.3583621) paper.
 

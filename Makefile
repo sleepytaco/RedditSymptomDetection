@@ -12,7 +12,7 @@ install-api:
 
 .PHONY: install-client
 install-client:
-	cd client; yarn;
+	cd client; npm install;
 
 .PHONY: activate
 activate:
@@ -24,4 +24,4 @@ run-api:
 
 .PHONY: run-client
 run-client:
-	cd client; yarn run dev;
+	cd client; npm run dev;

@@ -3,11 +3,12 @@ import {Textarea, Button, Spinner} from "@nextui-org/react";
 
 
 export default function ModelInput( {modelOutputDict, sendDataToRightHalf, loading, setLoading} ) {
+    const apiURLBase = import.meta.env.VITE_API_URL === "" ? "http://127.0.0.1:5000" : import.meta.env.VITE_API_URL;
     const [text, setText] = useState('In the quiet echoes of solitude, life often reveals its poignant melancholy. Each passing moment feels like a fleeting whisper of dreams lost and unfulfilled. The world, once adorned with the hues of hope, now wears the muted shades of sorrow.');
-
+    
     const sendToModelAPI = () => {
         // Construct the API endpoint with the text as a query parameter
-        const apiUrl = `http://127.0.0.1:5000?text=${encodeURIComponent(text)}`;
+        const apiUrl = `${apiURLBase}?text=${encodeURIComponent(text)}`;
         setLoading(true);
         fetch(apiUrl)
           .then(response => response.json())
@@ -33,7 +34,7 @@ export default function ModelInput( {modelOutputDict, sendDataToRightHalf, loadi
         <>
           <div className="flex">
             <div className="w-1/2 px-4">
-              <h1 class="text-3xl">Hello!</h1>
+              <h1 className="text-3xl">Hello!</h1>
               <p>I trained 10 random forest classifiers to predict
               symptoms of depression by training it on 1M+ Reddit text data. I featurized the Reddit posts using two methods: fitting LDA model and generating embeddings with RoBERTa language model. 
               Take a look at my <a href="https://github.com/sleepytaco/RedditSymptomDetection" target='_blank' style={{color: "green"}}>GitHub repo</a> for this project for more details on my implementation.

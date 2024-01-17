@@ -3,7 +3,7 @@ import {Textarea, Button, Spinner} from "@nextui-org/react";
 
 
 export default function ModelInput( {modelOutputDict, sendDataToRightHalf, loading, setLoading} ) {
-    const [text, setText] = useState('');
+    const [text, setText] = useState('In the quiet echoes of solitude, life often reveals its poignant melancholy. Each passing moment feels like a fleeting whisper of dreams lost and unfulfilled. The world, once adorned with the hues of hope, now wears the muted shades of sorrow.');
 
     const sendToModelAPI = () => {
         // Construct the API endpoint with the text as a query parameter
@@ -46,6 +46,7 @@ export default function ModelInput( {modelOutputDict, sendDataToRightHalf, loadi
               label="Model Input"
               placeholder="Enter some text here..."
               className="max-w-xs"
+              value={text}
               onChange={(e) => setText(e.target.value)}
               maxRows={8}
               />

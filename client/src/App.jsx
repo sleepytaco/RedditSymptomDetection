@@ -3,8 +3,8 @@ import ModelInput from './components/ModelInput'
 import ModelOutput from './components/ModelOutput'
 
 function App() {
-  const symptomsList = {'Anger': 0, 'Anhedonia': 0, 'Anxiety': 0, 'Disordered eating': 0, 'Loneliness': 0, 
-                        'Sad mood': 0, 'Self-loathing': 0, 'Sleep problem': 0, 'Somatic complaint': 0, 'Worthlessness': 0}
+  const symptomsList = { 'Anger': 0.09, 'Anhedonia': 0.41, 'Anxiety': 0.67, "Disordered eating": 0.21, 'Loneliness': 0.58, 
+                         "Sad mood": 0.31, "Self-loathing": 0.72, "Sleep problem": 0.28, "Somatic complaint": 0.76, 'Worthlessness': 0.46}
   const [modelOutputDict, setModelOutputDict] = useState(symptomsList)
   const [loading, setLoading] = useState(false);
 

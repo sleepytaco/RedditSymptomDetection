@@ -8,7 +8,7 @@ venv:
 install-api:
 	python3 -m venv venv
 	. venv/bin/activate
-	pip install -r backend/requirements.txt	
+	pip install -r api/requirements.txt	
 
 .PHONY: install-client
 install-client:

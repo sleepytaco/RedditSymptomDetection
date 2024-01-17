@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {Textarea, Button, Spinner} from "@nextui-org/react";
 
 
-export default function ModelInput() {
+export default function ModelInput( {sendDataToRightHalf} ) {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const sendToModel = () => {
+    const sendToModelAPI = () => {
         // Construct the API endpoint with the text as a query parameter
         const apiUrl = `http://127.0.0.1:5000?text=${encodeURIComponent(text)}`;
         setLoading(true);
@@ -15,6 +15,11 @@ export default function ModelInput() {
           .then(data => {
             // Handle the API response data
             console.log(data);
+            // const updatedModelOutputDict = {
+            //   ...dictionaryState,
+            //   data
+            // };
+            sendDataToRightHalf(updatedModelOutputDict);
           })
           .catch(error => {
             // Handle errors
@@ -25,7 +30,7 @@ export default function ModelInput() {
       };
 
     return (
-        <div className="flex-container p-">
+        <>
             <h1>Input to the model:</h1>
             <Textarea
                 label="Description"
@@ -33,7 +38,7 @@ export default function ModelInput() {
                 className="max-w-xs"
                 onChange={(e) => setText(e.target.value)}
                 />
-            { !loading ? <Button onClick={sendToModel}>Predict</Button> : <Spinner color="success"/>}
-        </div>
+            { !loading ? <Button onClick={sendToModelAPI}>Predict</Button> : <Spinner color="success"/>}
+        </>
     );
 }

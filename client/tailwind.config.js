@@ -1,11 +1,10 @@
-/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
-
 const {nextui} = require("@nextui-org/react");
 
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{html,js}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -14,3 +13,4 @@ module.exports = {
   darkMode: "class",
   plugins: [nextui()],
 }
+
